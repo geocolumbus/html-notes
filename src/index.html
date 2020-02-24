@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Free Web tutorials">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="author" content="geocolumbus@gmail.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sample HTML5 Page</title>
+
+    <!--
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="alternate" hreflang="ja" href="http://mysite.com/es.php">
+    -->
+    <script>
+        const name = "a script"
+        console.log(name)
+    </script>
+
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+        }
+
+        .grid-cap {
+            grid-column-start: 1;
+            grid-column-end: span 3;
+            background-color: lightgray;
+        }
+
+        .grid-left {
+            grid-column-start: 1;
+            grid-column-end: span 1;
+            background-color: lightgreen;
+        }
+
+        .grid-middle {
+            grid-column-start: 2;
+            grid-column-end: span 1;
+        }
+
+        .grid-right {
+            grid-column-start: 3;
+            grid-column-end: span 1;
+            background-color: lightgoldenrodyellow;
+        }
+
+        .grid-container-2 {
+            display: grid;
+            grid-template-columns: auto auto;
+        }
+
+        .grid-container-left {
+            grid-column-start: 1;
+            grid-column-end: span 1
+        }
+
+        .grid-container-right {
+            grid-column-start: 2;
+            grid-column-end: span 1
+        }
+    </style>
+
+</head>
+
+<body>
+<div class="grid-container">
+    <div class="grid-cap">Header</div>
+    <div class="grid-left">left</div>
+    <div class="grid-middle">
+        <div class="grid-container-2">
+            <div class="grid-container-left">The lefthand result</div>
+            <div class="grid-container-right">The righthand result</div>
+        </div>
+    </div>
+    <div class="grid-right">right</div>
+    <div class="grid-cap">Footer</div>
+</div>
+</body>
+
+</html>
