@@ -23,61 +23,175 @@
         .grid-container {
             display: grid;
             grid-template-columns: auto auto auto;
-        }
-
-        .grid-cap {
-            grid-column-start: 1;
-            grid-column-end: span 3;
             background-color: lightgray;
         }
 
-        .grid-left {
+        .grid-header {
+            grid-column-start: 1;
+            grid-column-end: span 4;
+        }
+
+        .grid-footer {
+            grid-column-start: 1;
+            grid-column-end: span 4;
+        }
+
+        .grid-nav {
             grid-column-start: 1;
             grid-column-end: span 1;
-            background-color: lightgreen;
+            background-color: #ffc;
         }
 
-        .grid-middle {
+        .grid-main {
             grid-column-start: 2;
-            grid-column-end: span 1;
+            grid-column-end: span 3;
         }
 
-        .grid-right {
-            grid-column-start: 3;
-            grid-column-end: span 1;
-            background-color: lightgoldenrodyellow;
-        }
-
-        .grid-container-2 {
+        .grid-sections {
             display: grid;
-            grid-template-columns: auto auto;
+            grid-template-columns: 1fr 200px;
         }
 
-        .grid-container-left {
+        .grid-section {
             grid-column-start: 1;
             grid-column-end: span 1
         }
 
-        .grid-container-right {
+        .grid-section-aside {
             grid-column-start: 2;
             grid-column-end: span 1
+        }
+
+        header, footer {
+            text-align: center;
+            padding: 8px;
+            background-color: cornflowerblue;
+            color: white;
+        }
+
+        header {
+        }
+
+        footer {
+            max-height: 20px;
+        }
+
+        nav {
+            margin-right: 10px;
+            padding: 8px;
+            height: calc(100% - 16px);
+        }
+
+        aside {
+            margin: 0 20px 0 10px;
+            height: calc(100% - 16px);
+        }
+
+        section {
+        }
+
+        article {
+            padding: 0 20px 8px 20px;
+        }
+
+        article h2 {
+            text-align: center;
         }
     </style>
+
+    <script>
+        const l1 = [
+            "Vestibulum vehicula urna ut velit viverra cursus. Sed sed erat vel ligula gravida aliquet. Sed arcu arcu, aliquet non ullamcorper vel, consectetur at nisi. Suspendisse molestie tellus id diam accumsan aliquet. In eget orci at urna feugiat tempus non eget sem. Duis nec felis nulla. Donec luctus pretium cursus. Ut nec lorem nisi. Quisque sit amet justo tortor. Aenean imperdiet nibh tortor, vel bibendum tellus suscipit et. Cras magna orci, consequat a elit sed, pulvinar congue quam. Donec facilisis velit a mi tempus commodo. Vestibulum iaculis quam metus, vitae cursus lorem accumsan quis.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget lobortis dolor, sed dictum justo. Morbi facilisis mi ante, id posuere elit semper id. Ut dapibus lacinia eros quis viverra. Sed vel volutpat sapien. Aliquam sodales nulla nibh, nec posuere urna luctus nec. Curabitur non viverra purus. Fusce porttitor elementum efficitur. Donec venenatis massa ante, vitae accumsan tellus aliquet eget. Cras at enim non sapien consequat aliquam sit amet id ex. Morbi risus mauris, ultricies at vulputate sit amet, condimentum a nulla. Curabitur vel nibh consectetur, iaculis odio a, porttitor erat. Maecenas tristique et lorem nec ullamcorper.",
+            "Phasellus lobortis, purus sit amet feugiat facilisis, ipsum mi viverra nibh, non porttitor est orci quis risus. Praesent vitae ante ligula. Aenean eget erat vel est malesuada commodo. Fusce neque libero, convallis quis venenatis eu, imperdiet et lectus. Sed vitae sem sit amet sapien posuere iaculis. Cras ac enim molestie metus scelerisque tristique. Morbi consequat fermentum faucibus.",
+            "Nunc nec metus est. Phasellus ac nibh vitae ante ultricies tincidunt. In a convallis risus, vitae lacinia est. Duis placerat interdum tellus, eu fermentum eros faucibus rutrum. Phasellus malesuada bibendum orci, eu varius libero vehicula sit amet. Duis augue nulla, vulputate ut nisi quis, rhoncus sodales tortor. Etiam imperdiet laoreet purus et luctus. Nunc ullamcorper lorem magna, vel scelerisque felis laoreet ac. Duis arcu erat, egestas id placerat sit amet, pellentesque eu odio. Vestibulum condimentum lectus fermentum odio tempus, ut consequat nisl faucibus. Aliquam consequat aliquet odio sit amet molestie. Cras sed nisi venenatis, viverra ex in, eleifend orci.",
+            "Aliquam eget tellus quis risus sollicitudin scelerisque a nec mauris. Integer commodo eleifend urna, non commodo felis ultricies vel. Nunc nec urna arcu. Vestibulum vitae ante sollicitudin, vulputate nisl non, suscipit elit. Cras iaculis sapien at mi vehicula vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sodales convallis nisi eu hendrerit. Duis non dolor eu sapien luctus consectetur a faucibus urna. Phasellus ac tellus vel dui tincidunt vestibulum a a lacus. Fusce a faucibus nunc."
+        ]
+    </script>
 
 </head>
 
 <body>
 <div class="grid-container">
-    <div class="grid-cap">Header</div>
-    <div class="grid-left">left</div>
-    <div class="grid-middle">
-        <div class="grid-container-2">
-            <div class="grid-container-left">The lefthand result</div>
-            <div class="grid-container-right">The righthand result</div>
-        </div>
+    <div class="grid-header">
+        <header><h1>The header</h1></header>
     </div>
-    <div class="grid-right">right</div>
-    <div class="grid-cap">Footer</div>
+    <div class="grid-nav">
+        <nav>
+            <h3>Navigation</h3>
+            <ul>
+                <li>Page One</li>
+                <li>Page Two</li>
+                <li>Page Three</li>
+            </ul>
+        </nav>
+    </div>
+    <div class="grid-main">
+        <main>
+            <div class="grid-sections">
+                <div class="grid-section">
+                    <section>
+                        <article>
+                            <h2>Article #1</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget lobortis dolor,
+                                sed dictum justo. Morbi facilisis mi ante, id posuere elit semper id. Ut dapibus lacinia
+                                eros quis viverra. Sed vel volutpat sapien. Aliquam sodales nulla nibh, nec posuere urna
+                                luctus nec. Curabitur non viverra purus. Fusce porttitor elementum efficitur. Donec
+                                venenatis massa ante, vitae accumsan tellus aliquet eget. Cras at enim non sapien
+                                consequat aliquam sit amet id ex. Morbi risus mauris, ultricies at vulputate sit amet,
+                                condimentum a nulla. Curabitur vel nibh consectetur, iaculis odio a, porttitor erat.
+                                Maecenas tristique et lorem nec ullamcorper. Cras luctus ante vitae justo scelerisque
+                                faucibus. Praesent euismod eros non ex dignissim, a luctus est varius. Vivamus auctor
+                                orci a metus gravida vulputate. Ut placerat placerat faucibus.</p>
+                        </article>
+                        <article>
+                            <h2>Article #2</h2>
+                            <p>Donec eget porttitor diam. Proin ultricies iaculis mi, rhoncus ornare diam pulvinar id.
+                                In hac habitasse platea dictumst. Aenean sit amet est lacus. Integer dapibus rhoncus
+                                lacinia. Maecenas id libero id magna placerat congue eget sed mi. Sed ac tempus neque,
+                                vitae facilisis ante. Integer tristique sit amet ex sed ultricies. Ut aliquet turpis
+                                ligula, non imperdiet odio convallis nec. In blandit nisi at sollicitudin bibendum.
+                                Nullam pulvinar diam id velit faucibus, eu suscipit erat tempor.</p>
+                        </article>
+                        <article>
+                            <h2>Article #3</h2>
+                            <p>Aliquam ut tempus dui. Nulla scelerisque faucibus sapien, eget vulputate tellus elementum
+                                quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et arcu mattis lacus
+                                vulputate eleifend. Sed iaculis vehicula mi, quis fermentum felis egestas nec. Curabitur
+                                iaculis sapien id vulputate cursus. Nam interdum dolor venenatis sollicitudin lacinia.
+                                In hac habitasse platea dictumst. In gravida laoreet massa, eget tristique odio rutrum
+                                vel. Vestibulum ut enim feugiat, fringilla arcu eget, eleifend eros. Phasellus interdum
+                                ligula accumsan, mollis leo id, porttitor urna. Maecenas id mi sed ipsum consectetur
+                                interdum. Donec sed massa semper, vestibulum mauris sit amet, vestibulum urna. Nulla vel
+                                tortor sed augue tempor pulvinar quis vel nulla.</p>
+                            <p>Etiam dapibus, elit vel dignissim gravida, mauris tellus dictum libero, quis consequat
+                                neque odio vitae erat. Donec gravida est augue, ac ultrices turpis dictum vel.
+                                Vestibulum volutpat euismod nunc, sit amet condimentum dui hendrerit sed. Quisque
+                                vestibulum elit velit, ac tempor nisl congue malesuada. Vestibulum sit amet ullamcorper
+                                ante, eget porta metus. Nunc vitae libero commodo, fermentum mauris et, volutpat massa.
+                                Nulla facilisi. In congue aliquet ipsum, vel sodales turpis aliquam vel. Aenean
+                                elementum eleifend porttitor. Mauris convallis ut odio eget suscipit. Pellentesque
+                                sagittis venenatis sollicitudin. Maecenas sodales nisl justo, tempus facilisis purus
+                                vehicula at. Aliquam ac odio eu urna mollis bibendum.</p>
+                        </article>
+                    </section>
+                </div>
+                <div class="grid-section-aside">
+                    <aside>
+                        <h3>Another thing...</h3>
+                        <p>Etiam dapibus, elit vel dignissim gravida, mauris tellus dictum libero, quis consequat neque
+                            odio vitae erat. Donec gravida est augue, ac ultrices turpis dictum vel. Vestibulum volutpat
+                            euismod nunc, sit amet condimentum dui hendrerit sed. Quisque vestibulum elit velit, ac
+                            tempor nisl congue malesuada. Vestibulum sit amet ullamcorper ante, eget porta metus. Nunc
+                            vitae libero commodo, fermentum mauris et, volutpat massa. Nulla facilisi.</p>
+                    </aside>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div class="grid-footer">
+        <footer>&copy; 2019 - George Campbell</footer>
+    </div>
 </div>
 </body>
 
